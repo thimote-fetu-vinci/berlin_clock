@@ -20,4 +20,10 @@ describe("SimpleMinutes", function () {
 
         expect(result).toEqual([true, true, false, false]);
     });
+
+    it("should return [true, true, true, false] for 3", function () {
+        const result = main.simpleMinutes(main.intToMinutes(3));
+
+        expect(result).toEqual([true, true, true, false]);
+    });
 });
