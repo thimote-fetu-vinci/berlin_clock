@@ -1,6 +1,7 @@
 import { SimpleMinutes } from "./simpleMinutes.js";
 import { FiveMinutes } from "./fiveMinutes.js";
 import { SimpleHours } from "./simpleHours.js";
+import { FiveHours } from "./fiveHours.js";
 
 export class Main {
     intToMinutes(number) {
@@ -21,5 +22,9 @@ export class Main {
 
     simpleHours(timestamp) {
         return SimpleHours(timestamp);
+    }
+
+    fiveHours(timestamp) {
+        return FiveHours(timestamp);
     }
 }
