@@ -14,4 +14,10 @@ describe("SimpleHours", function () {
 
         expect(result).toEqual([true, false, false, false]);
     });
+
+    it("should return [true, true, false, false] for 2", function () {
+        const result = main.simpleHours(main.intToHours(2));
+
+        expect(result).toEqual([true, true, false, false]);
+    });
 });
