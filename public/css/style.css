@@ -1,0 +1,89 @@
+body {
+    background: linear-gradient(to bottom, black 33.33%, red 33.33% 66.66%, yellow 66.66%);
+    background-repeat: no-repeat;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #fff;
+    min-width: 400px;
+    min-height: 600px;
+    padding: 20px;
+}
+
+#lampSeconds {
+    display: flex;
+    justify-content: center;
+}
+
+#lampSeconds div {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#lampSeconds div.red-active {
+    background-color: red;
+    border: 2px solid darkred;
+}
+
+#lampSeconds div.red-inactive {
+    background-color: darkred;
+    border: 2px solid red;
+}
+
+#fiveHours,
+#simpleHours,
+#fiveMinutes,
+#simpleMinutes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#fiveMinutes div {
+    width: 5%;
+    height: 50px;
+}
+
+:where(#fiveHours, #simpleHours, #simpleMinutes) div {
+    width: 20%;
+    height: 50px;
+}
+
+:where(#fiveMinutes, #simpleMinutes) div.yellow-active {
+    background-color: yellow;
+    border: 2px solid darkgoldenrod;
+}
+
+:where(#fiveMinutes, #simpleMinutes) div.yellow-inactive:not(:nth-child(3n)) {
+    background-color: darkgoldenrod;
+    border: 2px solid yellow;
+}
+
+:where(#fiveMinutes, #simpleMinutes) div.yellow-inactive:nth-child(3n) {
+    background-color: darkred;
+    border: 2px solid red;
+}
+
+:where(#fiveMinutes, #simpleMinutes) div.yellow-active:nth-child(3n) {
+    background-color: red;
+    border: 2px solid darkred;
+}
+
+:where(#fiveHours, #simpleHours) div.red-active {
+    background-color: red;
+    border: 2px solid darkred;
+}
+
+:where(#fiveHours, #simpleHours) div.red-inactive {
+    background-color: darkred;
+    border: 2px solid red;
+}

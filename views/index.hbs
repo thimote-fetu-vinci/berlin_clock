@@ -1,5 +1,45 @@
 <main>
-    {{#each timestamp}}
-    <p>{{this}}</p>
-    {{/each}}
+    <div id="lampSeconds">
+        {{#if (eq lampSeconds false)}}
+        <div class="red-inactive">&nbsp;</div>
+        {{else}}
+        <div class="red-active">&nbsp;</div>
+        {{/if}}
+    </div>
+    <div id="fiveHours">
+        {{#each fiveHours}}
+        {{#if (eq this false)}}
+        <div class="red-inactive">&nbsp;</div>
+        {{else}}
+        <div class="red-active">&nbsp;</div>
+        {{/if}}
+        {{/each}}
+    </div>
+    <div id="simpleHours">
+        {{#each simpleHours}}
+        {{#if (eq this false)}}
+        <div class="red-inactive">&nbsp;</div>
+        {{else}}
+        <div class="red-active">&nbsp;</div>
+        {{/if}}
+        {{/each}}
+    </div>
+    <div id="fiveMinutes">
+        {{#each fiveMinutes}}
+        {{#if (eq this false)}}
+        <div class="yellow-inactive">&nbsp;</div>
+        {{else}}
+        <div class="yellow-active">&nbsp;</div>
+        {{/if}}
+        {{/each}}
+    </div>
+    <div id="simpleMinutes">
+        {{#each simpleMinutes}}
+        {{#if (eq this false)}}
+        <div class="yellow-inactive">&nbsp;</div>
+        {{else}}
+        <div class="yellow-active">&nbsp;</div>
+        {{/if}}
+        {{/each}}
+    </div>
 </main>

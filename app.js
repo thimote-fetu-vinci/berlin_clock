@@ -4,6 +4,11 @@ const path = require('path');
 const logger = require('morgan');
 const session = require('express-session');
 
+/* eq checks if two values are equal */
+hbs.registerHelper('eq', function (a, b, opts) {
+    return a == b;
+});
+
 const indexRouter = require("./routes/index.js");
 
 const app = express();
