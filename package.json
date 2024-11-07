@@ -1,6 +1,7 @@
 {
   "name": "berlin_clock",
   "version": "1.0.0",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
