@@ -26,4 +26,10 @@ describe("SimpleMinutes", function () {
 
         expect(result).toEqual([true, true, true, false]);
     });
+
+    it("should return [true, true, true, true] for 4", function () {
+        const result = main.simpleMinutes(main.intToMinutes(4));
+
+        expect(result).toEqual([true, true, true, true]);
+    });
 });
