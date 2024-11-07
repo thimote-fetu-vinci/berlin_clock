@@ -8,4 +8,10 @@ describe("SimpleMinutes", function () {
 
         expect(result).toEqual(true);
     });
+
+    it("should return false for odd numbers", function () {
+        const result = main.lampSeconds(main.intToSeconds(1));
+
+        expect(result).toEqual(false);
+    });
 });
