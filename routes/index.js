@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { simpleMinutes } = require('../functions/step1.js');
+const { SimpleMinutes } = require('../functions/simpleMinutes');
 
 router.get('/', (req, res) => {
-    res.render('index.hbs', { timestamp: simpleMinutes(new Date().getTime()) });
+    res.render('index.hbs', { timestamp: SimpleMinutes(new Date().getTime()) });
 });
 
 module.exports = router;

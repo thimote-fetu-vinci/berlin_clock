@@ -4,8 +4,14 @@ describe("SimpleMinutes", function () {
     const main = new Main();
 
     it("should return [false, false, false, false] for 0", function () {
-        const result = main.simpleMinutes(0);
+        const result = main.simpleMinutes(main.intToMinutes(0));
 
         expect(result).toEqual([false, false, false, false]);
+    });
+
+    it("should return [true, false, false, false] for 1", function () {
+        const result = main.simpleMinutes(main.intToMinutes(1));
+
+        expect(result).toEqual([true, false, false, false]);
     });
 });
