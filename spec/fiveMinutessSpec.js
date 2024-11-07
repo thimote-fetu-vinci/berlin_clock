@@ -38,4 +38,10 @@ describe("FiveMinutes", function () {
 
         expect(result).toEqual([true, true, true, true, true, false, false, false, false, false, false]);
     });
+
+    it("should return [true, true, true, true, true, true, false, false, false, false, false] for 30", function () {
+        const result = main.fiveMinutes(main.intToMinutes(30));
+
+        expect(result).toEqual([true, true, true, true, true, true, false, false, false, false, false]);
+    });
 });
