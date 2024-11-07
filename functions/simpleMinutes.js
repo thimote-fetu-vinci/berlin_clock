@@ -1,10 +1,10 @@
 function SimpleMinutes(timestamp) {
-    let minutes = [false, false, false, false];
+    let simpleMinutes = [false, false, false, false];
     
     for (let i = 0; i < new Date(timestamp).getMinutes() % 5; i++) {
-        minutes[i] = true;
+        simpleMinutes[i] = true;
     }
-    return minutes;
+    return simpleMinutes;
 }
 
 export { SimpleMinutes };

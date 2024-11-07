@@ -1,4 +1,5 @@
 import { SimpleMinutes } from "./simpleMinutes.js";
+import { FiveMinutes } from "./fiveMinutes.js";
 
 export class Main {
     intToMinutes(number) {
@@ -7,5 +8,9 @@ export class Main {
 
     simpleMinutes(timestamp) {
         return SimpleMinutes(timestamp);
+    }
+
+    fiveMinutes(timestamp) {
+        return FiveMinutes(timestamp);
     }
 }
