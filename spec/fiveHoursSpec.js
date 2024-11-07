@@ -8,4 +8,10 @@ describe("FiveHours", function () {
 
         expect(result).toEqual([false, false, false, false]);
     });
+
+    it("should return [true, false, false, false] for 5", function () {
+        const result = main.fiveHours(main.intToHours(5));
+
+        expect(result).toEqual([true, false, false, false]);
+    });
 });
