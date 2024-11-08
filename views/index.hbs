@@ -1,11 +1,5 @@
 <main>
-    <div id="lampSeconds">
-        {{#if (eq lampSeconds false)}}
-        <div class="red-inactive">&nbsp;</div>
-        {{else}}
-        <div class="red-active">&nbsp;</div>
-        {{/if}}
-    </div>
+    <div id="lampSeconds"></div>
     <div id="fiveHours">
         {{#each fiveHours}}
         {{#if (eq this false)}}
@@ -43,3 +37,48 @@
         {{/each}}
     </div>
 </main>
+<script>
+    function updateClock() {
+        fetch('/api/clock')
+        .then(response => response.json())
+        .then(data => {
+                document.getElementById('lampSeconds').innerHTML = data.lampSeconds % 2 ? '<div class="red-active">&nbsp;</div>' : '<div class="red-inactive">&nbsp;</div>';
+                
+                const fiveHoursDiv = document.getElementById('fiveHours');
+                fiveHoursDiv.innerHTML = '';
+                for (let i = 0; i < data.fiveHours.length; i++) {
+                    fiveHoursDiv.innerHTML += data.fiveHours[i] ? '<div class="red-active">&nbsp;</div>' : '<div class="red-inactive">&nbsp;</div>';
+                }
+                
+                const simpleHoursDiv = document.getElementById('simpleHours');
+                simpleHoursDiv.innerHTML = '';
+                for (let i = 0; i < data.simpleHours.length; i++) {
+                    simpleHoursDiv.innerHTML += data.simpleHours[i] ? '<div class="red-active">&nbsp;</div>' : '<div class="red-inactive">&nbsp;</div>';
+                }
+
+                const fiveMinutesDiv = document.getElementById('fiveMinutes');
+                fiveMinutesDiv.innerHTML = '';
+                for (let i = 0; i < data.fiveMinutes.length; i++) {
+                    fiveMinutesDiv.innerHTML += data.fiveMinutes[i] ? '<div class="yellow-active">&nbsp;</div>' : '<div class="yellow-inactive">&nbsp;</div>';
+                }
+
+                const simpleMinutesDiv = document.getElementById('simpleMinutes');
+                simpleMinutesDiv.innerHTML = '';
+                for (let i = 0; i < data.simpleMinutes.length; i++) {
+                    simpleMinutesDiv.innerHTML += data.simpleMinutes[i] ? '<div class="yellow-active">&nbsp;</div>' : '<div class="yellow-inactive">&nbsp;</div>';
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
+    function syncClock() {
+        const now = new Date();
+        const delay = 1000 - now.getMilliseconds();
+        setTimeout(() => {
+            updateClock();
+            setInterval(updateClock, 1000);
+        }, delay);
+    }
+
+    syncClock();
+</script>

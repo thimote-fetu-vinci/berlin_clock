@@ -7,9 +7,13 @@ const FiveHours = require('../functions/fiveHours.js');
 const LampSeconds = require('../functions/lampSeconds.js');
 
 router.get('/', (req, res) => {
+    res.render('index.hbs');
+});
+
+router.get('/api/clock', (req, res) => {
     const timestamp = new Date().getTime();
 
-    res.render('index.hbs', { lampSeconds: LampSeconds(timestamp), fiveHours: FiveHours(timestamp), simpleHours: SimpleHours(timestamp), fiveMinutes: FiveMinutes(timestamp), simpleMinutes: SimpleMinutes(timestamp) })
+    res.json({ lampSeconds: LampSeconds(timestamp), fiveHours: FiveHours(timestamp), simpleHours: SimpleHours(timestamp), fiveMinutes: FiveMinutes(timestamp), simpleMinutes: SimpleMinutes(timestamp) });
 });
 
 module.exports = router;

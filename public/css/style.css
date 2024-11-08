@@ -63,7 +63,12 @@ main {
     border: 2px solid darkgoldenrod;
 }
 
-:where(#fiveMinutes, #simpleMinutes) div.yellow-inactive:not(:nth-child(3n)) {
+#fiveMinutes div.yellow-inactive:not(:nth-child(3n)) {
+    background-color: darkgoldenrod;
+    border: 2px solid yellow;
+}
+
+#simpleMinutes div.yellow-inactive {
     background-color: darkgoldenrod;
     border: 2px solid yellow;
 }
