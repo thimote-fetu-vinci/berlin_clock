@@ -73,6 +73,7 @@
 
     function syncClock() {
         const now = new Date();
+        
         const delay = 1000 - now.getMilliseconds();
         setTimeout(() => {
             updateClock();
