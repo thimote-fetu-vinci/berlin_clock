@@ -7,4 +7,4 @@ function SimpleMinutes(timestamp) {
     return simpleMinutes;
 }
 
-export { SimpleMinutes };
+module.exports = SimpleMinutes;

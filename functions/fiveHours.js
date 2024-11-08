@@ -8,4 +8,4 @@ function FiveHours(timestamp) {
     return fiveHours;
 }
 
-export { FiveHours };
+module.exports = FiveHours;

@@ -12,7 +12,7 @@ hbs.registerHelper('eq', function (a, b, opts) {
 const indexRouter = require("./routes/index.js");
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Setup views folder and handlebar engine
 app.set('views', path.join(__dirname, 'views'));

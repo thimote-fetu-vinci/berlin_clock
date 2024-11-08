@@ -8,4 +8,4 @@ function LampSeconds(timestamp) {
     return lampSeconds;
 }
 
-export { LampSeconds };
+module.exports = LampSeconds;
